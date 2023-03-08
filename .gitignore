@@ -1,0 +1,6 @@
+generated
+build
+abis/*
+node_modules
+# services
+data 

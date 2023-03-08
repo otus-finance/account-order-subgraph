@@ -1,0 +1,23 @@
+{
+  "name": "@otus-account-order/subgraph",
+  "license": "UNLICENSED",
+  "version": "1.0.0",
+  "scripts": {
+    "compose": "docker-compose -f docker-compose.yml up -d",
+    "auth": "graph auth --product hosted-service",
+    "codegen": "graph codegen subgraph.js --network local",
+    "create:local": "graph create --node http://localhost:8020/ otus-account-order/test-subgraph",
+    "deploy:local": "graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 otus-account-order/test-subgraph --network local subgraph.js"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "^0.26.0",
+    "@graphprotocol/graph-ts": "^0.26.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/typescript": "^2.4.7",
+    "typescript": "^4.3.2",
+    "mustache": "^3.1.0"
+  }
+}
+
+

@@ -1,0 +1,34 @@
+type Global @entity {
+  id: ID!
+}
+
+type AccountOrder @entity {
+  id: ID!
+  owner: Bytes!
+  balance: BigInt!
+  orders: [Order!] @derivedFrom(field: "account")
+}
+
+type Order @entity {
+  id: ID!
+  account: AccountOrder!
+  committedMargin: BigInt!
+  gelatoTaskId: Bytes!
+  market: Bytes!
+  collatPercent: BigInt!
+  optionType: BigInt!
+  strikeId: BigInt!
+  size: BigInt!
+  positionId: BigInt!
+  tradeDirection: BigInt!
+  targetPrice: BigInt!
+  targetVolatility: BigInt!
+  status: OrderStatus
+  # orderType
+}
+
+enum OrderStatus {
+  Open
+  Cancelled
+  Filled
+}
