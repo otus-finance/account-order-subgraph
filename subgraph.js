@@ -16,7 +16,7 @@ const getNetwork = (networkForPath) => {
   }
 }
 
-const getETHNetwork = (network) => {
+const getETHNetwork = (networkForPath) => {
   switch (networkForPath) {
     case 'local':
     case 'goerli-ovm':
@@ -42,7 +42,7 @@ const dataSources = [
     source: {
       address: data[`${network}_AccountFactoryAddress`],
       abi: 'AccountFactory',
-      startBlock: 20000001
+      startBlock: 1 // on local 1 on optimism 230000
     },
     mapping: {
       kind: 'ethereum/events',
