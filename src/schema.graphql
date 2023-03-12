@@ -12,6 +12,7 @@ type AccountOrder @entity {
 type Order @entity {
   id: ID!
   account: AccountOrder!
+  orderId: BigInt!
   committedMargin: BigInt!
   gelatoTaskId: Bytes!
   market: Bytes!

@@ -68,6 +68,7 @@ export function handleStrikeOrderPlaced(event: StrikeOrderPlaced): void {
   let orderInfo = event.params._tradeOrder;
   let trade = orderInfo.strikeTrade;
 
+  order.orderId = orderId;
   order.gelatoTaskId = orderInfo.gelatoTaskId;
   order.committedMargin = orderInfo.committedMargin;
   order.market = trade.market;
@@ -80,5 +81,6 @@ export function handleStrikeOrderPlaced(event: StrikeOrderPlaced): void {
   order.targetPrice = trade.targetPrice;
   order.tradeDirection = trade.tradeDirection;
   order.targetVolatility = trade.targetVolatility;
+  // add order type
   order.save();
 }

@@ -4,3 +4,6 @@ abis/*
 node_modules
 # services
 data 
+
+# local env files
+.env
