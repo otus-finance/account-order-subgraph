@@ -10,7 +10,7 @@ const getNetwork = (networkForPath) => {
     case 'goerli-ovm':
       return 'optimism-goerli'
     case 'mainnet-ovm':
-      return 'optimism'
+      return 'optimistic-mainnet'
     default:
       throw Error('invalid network type')
   }
@@ -28,11 +28,23 @@ const getETHNetwork = (networkForPath) => {
   }
 }
 
+const getStartBlock = (networkForPath) => {
+  switch (networkForPath) {
+    case 'local':
+      return 1
+    case 'mainnet-ovm':
+      return 80035549
+    default:
+      throw Error('invalid network type')
+  }
+}
+
 const data = require(path.join('./config/config.json'))
 const network = getNetwork(networkForPath)
 const ethNetwork = getETHNetwork(networkForPath);
 console.log({ network, ethNetwork })
 const getABIPath = (contractName) => path.join('./abis', network + '_' + contractName + '.json')
+const startBlock = getStartBlock(networkForPath); 
 
 const dataSources = [
   {
@@ -42,7 +54,7 @@ const dataSources = [
     source: {
       address: data[`${network}_AccountFactoryAddress`],
       abi: 'AccountFactory',
-      startBlock: 1 // on local 1 on optimism 230000
+      startBlock: startBlock // on local 1 on optimism 230000
     },
     mapping: {
       kind: 'ethereum/events',

@@ -1,7 +1,11 @@
 {
-  "localhost_AccountFactoryAddress": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
-  "localhost_AccountOrderAddress": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+  "localhost_AccountFactoryAddress": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+  "localhost_AccountOrderAddress": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
   "localhost_LyraBaseBTCAddress": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
-  "localhost_LyraBaseETHAddress": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
-  "localhost_LyraQuoterAddress": "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+  "localhost_LyraBaseETHAddress": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "localhost_LyraQuoterAddress": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "optimistic-mainnet_AccountFactoryAddress": "0xf5eF76ffad699f4D7574F11Ff58fCe0Ac1B2b0Ca",
+  "optimistic-mainnet_AccountOrderAddress": "0xbf5F1555C2033031a6C2472A8a2937F870958F05",
+  "optimistic-mainnet_LyraBaseBTCAddress": "0x4DE4FF646c1E5A2Dcf1Be50568B0FaBa421eCA2a",
+  "optimistic-mainnet_LyraBaseETHAddress": "0xFb08dC6F3D1F55777E7d2bBe1cC439eB8E914b56"
 }

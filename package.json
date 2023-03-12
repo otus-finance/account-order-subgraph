@@ -4,10 +4,12 @@
   "version": "1.0.0",
   "scripts": {
     "compose": "docker-compose -f docker-compose.yml up -d",
-    "auth": "graph auth --product hosted-service",
     "codegen": "graph codegen subgraph.js --network local",
     "create:local": "graph create --node http://localhost:8020/ otus-account-order/test-subgraph",
-    "deploy:local": "graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 otus-account-order/test-subgraph --network local subgraph.js"
+    "deploy:local": "graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 otus-account-order/test-subgraph --network local subgraph.js",
+    "auth": "graph auth --product hosted-service",
+    "codegen:mainnet": "graph codegen subgraph.js --network mainnet-ovm && graph build subgraph.js --network mainnet-ovm",
+    "deploy:optimism": "graph deploy --product hosted-service otus-finance/otus-account-order --network mainnet-ovm subgraph.js"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "^0.26.0",
